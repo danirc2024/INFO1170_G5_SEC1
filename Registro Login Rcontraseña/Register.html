@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+    <div class="register-container">
+        <form action="Registro.php" method="POST">
+            <h2>Registro</h2>
+            <div class="input-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu Nombre"/> 
+
+            <label for="contra">Contraseña:</label>
+            <input type="password" id="contra" name="contra" required placeholder="Ingresa tu Contraseña"/>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required />
+
+            <label for="recibir-correos">
+                <input type="checkbox" id="recibir-correos" name="recibir_correos" value="si" />
+                ¿Deseas recibir correos?
+            </label>
+            </div>
+
+            <div class="register-btn">
+                <input type="submit" value="Registrarse" />
+            </div>
+
+            <a href="InicioSesion.html">¿Tienes cuenta?</a>
+        </form>
+    </div>
+</body>
+</html>

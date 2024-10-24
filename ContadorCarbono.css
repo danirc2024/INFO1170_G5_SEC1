@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('PlantitaFondo.png'); /* Asegúrate de tener esta imagen en tu directorio */
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recycling-container {
+    background-color: white;
+    padding: 50px; /* Puedes ajustar el padding según sea necesario */
+    width: 700px; /* Ancho del contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    overflow-y: auto; /* Permitir desplazamiento si el contenido es demasiado largo */
+    max-height: 80vh; /* Limitar la altura máxima */
+    margin: 20px; /* Añadir márgenes para no tocar las esquinas */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px; /* Tamaño del título */
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px; /* Tamaño de la fuente de las etiquetas */
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Tamaño de la fuente de los inputs */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #128a32; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0f7a2b; /* Color del botón al pasar el mouse */
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+}
+

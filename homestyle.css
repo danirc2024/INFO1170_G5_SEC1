@@ -1,0 +1,644 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.Header {
+    position: relative;
+    padding: 20px;
+    background-size: 100% 100%;
+    animation: slider 20s linear infinite;
+    color: white;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes slider {
+    0%{background-image: url('imagenes/Naturaleza_Felix-Mittermeier_Pexels.jpg');}
+    30%{background-image: url('https://wallpapers.com/images/hd/green-nature-leaf-with-dew-pdju0rwgg16bn5nb.jpg');}
+    60%{background-image: url('https://i.pinimg.com/originals/de/55/0d/de550d8052bf677f9756cdefb35544e7.jpg');}
+    100%{background-image: url('https://wallpapercave.com/wp/wp7532100.jpg');}
+}
+
+.INICSERVUSCONTAC {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.INICSERVUSCONTAC ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.INICSERVUSCONTAC a {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: black;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.INICSERVUSCONTAC a:hover {
+    background-color: #333;
+}
+
+.Header h2 {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 10px;
+}
+
+.BarraBusqueda {
+    margin-top: 20px;
+}
+
+.BarraBusqueda input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.puntos {
+    /* background-image: url('imagenes/puntoreciclaje.jpg'), 
+                      url('imagenes/reciclaje.jpg'), 
+                      url('imagenes/reciclando.jpg'), 
+                      url('imagenes/limpiando.jpg'),
+                      url('imagenes/puntolimpio.jpg'); 
+    background-size: 20% 50%, 20% 50%, 20% 50%, 20% 50%, 40% 70%;Tamaños ajustados 
+    background-position: top left, top right, bottom left, bottom right, center;  Posiciones de cada imagen 
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;  Evitar repetición de imágenes */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative; /* Para asegurar que el contenido se ubique correctamente */
+}
+
+.puntos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.5); /* Capa semitransparente para mejorar legibilidad */
+    z-index: 1;
+}
+
+.puntos a {
+    position: relative;
+    z-index: 2; /* Asegura que el texto y el botón estén sobre la capa */
+}
+
+.btn {
+    z-index: 2;
+    background: linear-gradient(90deg,
+        #27b1f1, #3bf163);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg,
+        #02547a, #0b8024)
+}
+
+#map {
+    height: 700px;
+    width: 100%;
+    margin: 20px auto;
+    max-width: 1200px;
+    border: 5px solid #228B22;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
+}
+
+.filter-container {
+    margin: 20px;
+    text-align: center;
+}
+
+ .filter-container select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Sección de descripción */
+.description {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.description h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.map-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.map-section button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #32a852; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+    
+.map-section button:hover {
+        background-color: #228b22;  
+    }
+
+
+.leaflet-popup-content-wrapper {
+    background-color: #ffffff;  
+    border-radius: 10px;
+    border: 1px solid #228B22;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    padding: 10px;
+}
+
+.leaflet-popup-content h2 {
+    margin: 0;
+    color: #2f4f4f;  
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;  
+}
+
+.leaflet-popup-content p {
+    color: #444444;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+.leaflet-popup-tip-container {
+    display: none;  
+}
+
+
+.leaflet-popup {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.leaflet-popup-open {
+    opacity: 1;
+}
+
+/* Tabla -------------------------------------------------------*/
+
+table.TReciclaje {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #e0f7fa;
+    color: forestgreen;
+    border: 2px solid cyan;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.TReciclaje th, 
+table.TReciclaje td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid cadetblue;
+}
+
+table.TReciclaje th {
+    background-color: rgb(5, 102, 102);
+    color: white;
+    font-size: 1.2;
+}
+
+table.TReciclaje td {
+    background-color: white;
+}
+
+table.TReciclaje .material-title {
+    font-weight: bold;
+    color:cadetblue;
+}
+
+table.TReciclaje .material-description {
+    color: rgb(118, 118, 241);
+}
+
+table.TReciclaje img {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Tabla -------------------------------------------------------*/
+
+/* Estilos para toda la sección de voluntariado */
+.voluntariado {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 15px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+
+/* Columna de texto a la izquierda */
+.voluntariado-texto {
+    flex: 1;
+    padding: 30px;
+    background-color: #2330aa; /* Fondo azul claro */
+    border-radius: 10px;
+    color: white;
+    text-align: left; /* Alineado a la izquierda */
+    margin-right: 20px; /* Espaciado entre columnas */
+}
+
+.voluntariado-texto h2 {
+    font-size: 2.5rem; /* Tamaño del título */
+    color: #c1c2f5; /* Azul más oscuro para el título */
+    margin-bottom: 20px;
+}
+
+.voluntariado-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: white; /* Texto en blanco */
+}
+
+
+/* Columna del botón a la derecha */
+.boton_voluntariado {
+    flex: 0.7;
+    padding: 30px;
+    background-color: #1e3c72; /* Fondo azul oscuro */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    text-align: left;
+}
+
+.boton_voluntariado p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #c5cae9; /* Texto más claro */
+    margin-bottom: 20px;
+}
+.boton_derecha {
+    display: flex;
+    justify-content: center; /* Cambiado a 'center' para alinear el botón en el centro */
+    width: 100%;
+}
+
+/* Botón de registro */
+.boton_derecha .btn {
+    background: linear-gradient(90deg, #27b1f1, #3bf163, #3bffb4, #4d65eb); /* Fondo degradado */
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton_derecha .btn:hover {
+    background: linear-gradient(90deg, #013f10, #3bf163, #017046, #0826d1);
+    transform: scale(1.05);
+}
+
+
+.empresas {
+    text-align: center;
+}
+
+.empresas h2{
+    font-size: 2em;
+    color: blue;
+    padding: 15px;
+}
+
+.empresas p{
+    font-size: 1.25em;
+}
+
+.list {
+    display: flex;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    list-style-type: none;
+    transition: transform 0.5s ease;
+}
+
+/* Al hacer hover en la lista, los demás elementos se transforman */
+.list:hover .item:not(:hover) {
+    margin: 0 -20px;
+    transform: perspective(500px) rotateY(45deg) scale(0.95);
+}
+
+.list:hover .item:not(:hover)::after {
+    opacity: 0.4;
+}
+
+.item {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 3/4;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(146, 144, 144, 0.808);
+    transition: margin 0.5s, transform 0.5s;
+    cursor: pointer;
+}
+
+.item img {
+    width: 90%;
+    height: 100%;
+    border-radius: 0.5rem;
+    object-fit: contain;
+}
+
+/* Efecto cuando el cursor pasa sobre un ítem */
+.item:hover ~ .item {
+    transform: perspective(500px) rotateY(-45deg) scale(0.95);
+}
+
+.item:hover {
+    transform: perspective(500px) rotateY(0) scale(1.2);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    aspect-ratio: inherit;
+    border-radius: inherit;
+    background-color: rgb(245, 238, 238);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.testimonios {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.testimonios-contenedor {
+    background-image: url('.jpg' );
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+    
+.testimonios-filtro {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+    
+
+    
+.testimonios-slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
+    gap: 20px;
+}
+    
+.testimonio {
+    min-width: 400px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+    
+.avatar {
+    background-color: #03657e;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+    
+.detalles {
+    margin-left: 10px;
+}
+    
+.estrellas {
+    color: #f39c12;
+    font-size: 14px;
+}
+    
+.detalles p {
+    margin: 5px 0;
+}
+    
+.testimonios-slider::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento */
+}
+    
+.slider-controles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+    
+.slider-controles button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    
+.formulario-testimonios {
+    background-image: url('.jpg' );
+    background-position: unset;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+    
+.formulario-testimonios h3 {
+    margin-bottom: 20px;
+}
+    
+.formulario-testimonios label {
+    display: block;
+    margin: 10px 0 5px;
+}
+    
+.formulario-testimonios input,
+.formulario-testimonios textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+    
+.formulario-testimonios button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    
+
+.description {
+    background: url('imagenes/nature.jpg') center/cover no-repeat; /* Fondo con imagen */
+    padding: 20px 15px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    position: relative;
+}
+
+.description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para mejorar la legibilidad */
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.description h2 {
+    font-size: 2,5em;
+    color: #79be08; /* Color llamativo */
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    z-index: 2;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+.description p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+.icons {
+    position: relative;
+}
+
+.contacto {
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contacto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background-color: #0056b3;
+}
+
+.iconos {
+    position: relative;
+    
+}
+
+.iconos i {
+    padding: 10px;
+    margin: 30px;
+    font-size: 30px;
+    margin-left: 15px;
+
+}

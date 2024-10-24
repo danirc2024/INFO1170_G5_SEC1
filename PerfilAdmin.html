@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Administrador</title>
+    <link rel="stylesheet" href="PerfilAdmin.css"> <!-- Asegúrate de que esta ruta sea correcta -->
+</head>
+<body>
+    <header>
+        <h1>Perfil del Administrador</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="perfil_admin.html">Perfil</a></li>
+                <li><a href="logout.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="perfil">
+            <h2>Información del Administrador</h2>
+            <div class="info">
+                <label for="nombre">Nombre:</label>
+                <p id="nombre">Juan Pérez</p>
+
+                <label for="email">Correo electrónico:</label>
+                <p id="email">juan.perez@ejemplo.com</p>
+
+                <label for="telefono">Teléfono:</label>
+                <p id="telefono">+56 9 1234 5678</p>
+
+                <label for="rol">Rol:</label>
+                <p id="rol">Administrador</p>
+            </div>
+        </section>
+
+        <section class="acciones">
+            <h2>Acciones Rápidas</h2>
+            <button onclick="window.location.href='editar_perfil.html'">Editar Perfil</button>
+            <button onclick="window.location.href='gestionar_usuarios.html'">Gestionar Usuarios</button>
+            <button onclick="window.location.href='ver_reportes.html'">Ver Reportes</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Proyecto de Reciclaje</p>
+    </footer>
+</body>
+</html>

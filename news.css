@@ -1,0 +1,168 @@
+body {
+    background-color: #f8f9fa;
+}
+
+#darkModeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#darkModeToggle:hover {
+    background-color: #0056b3;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .carousel-caption h5, 
+body.dark-mode .carousel-caption p {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .nav-link {
+    color: #82cfff;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #4fb3ff;
+}
+
+body.dark-mode .comment-list li {
+    background-color: #333333;
+}
+
+body.dark-mode footer {
+    background-color: #111;
+    color: #bbb;
+}
+
+body.dark-mode .contacto input, 
+body.dark-mode .contacto textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+body.dark-mode .contacto button {
+    background-color: #4fb3ff;
+}
+
+body.dark-mode .iconos i {
+    color: #82cfff;
+}
+
+body.dark-mode .iconos i:hover {
+    color: #ffcc00;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.carousel-caption h5 {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-caption p {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+.comment-form {
+    margin-top: 10px;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: white;
+} 
+
+
+.contacto {
+    margin-bottom: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contacto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background-color: #0056b3;
+}
+
+.iconos i {
+    font-size: 24px;
+    color: #0044cc;
+    margin-right: 10px;
+}
+
+.iconos i:hover {
+    color: #ffcc00;
+}

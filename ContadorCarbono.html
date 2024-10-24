@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Huella de Carbono</title>
+    <link rel="stylesheet" href="ContadorCarbono.css">
+</head>
+<body>
+    <div class="recycling-container">
+        <h1>Calcula tu Reducción de Huella de Carbono</h1>
+        <form id="recycling-form">
+            <label for="material">Selecciona el material reciclado:</label>
+            <select id="material">
+                <option value="Botellas">Botellas PET</option>
+                <option value="Carton">Cartón</option>
+                <option value="Papel">Papel</option>
+                <option value="Aluminio">Latas de aluminio</option>
+                <option value="Revistas">Revistas</option>
+                <option value="Diarios">Diarios</option>
+                <option value="Pilas">Pilas</option>
+            </select>
+            <label for="amount">Cantidad (kg):</label>
+            <input type="number" id="amount" required>
+            <button type="submit">Calcular Reducción</button>
+        </form>
+
+        <div id="result"></div>
+
+        <button class="home-btn" onclick="window.location.href='home_paginw.html'">Volver a la Página Principal</button>
+    </div>
+
+    <script src="ContadorCarbono.js"></script>
+</body>
+</html>
+
+
