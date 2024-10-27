@@ -13,11 +13,19 @@ darkModeToggle.addEventListener('click', () => {
 
 
 function incrementLike(button) {
-    // Busca el span que muestra el contador de likes al lado del botón clicado
     const likeCount = button.nextElementSibling;
-    // Convierte el texto del contador en un número y lo incrementa
-    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    const heartIcon = likeCount.nextElementSibling;
+    if (heartIcon.style.display === "none") {
+        // Activa el like
+        heartIcon.style.display = "inline"; // Muestra el corazón rojo
+        likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    } else {
+        // Quita el like
+        heartIcon.style.display = "none"; // Oculta el corazón rojo
+        likeCount.textContent = parseInt(likeCount.textContent) - 1;
+    }
 }
+
 
 // Función para mostrar/ocultar el formulario de comentarios
 function toggleCommentForm(id) {
