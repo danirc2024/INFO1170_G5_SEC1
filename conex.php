@@ -1,16 +1,16 @@
 <?php
-$host = "localhost";  
-$usuario = "root";    
-$password = "";       
-$base_de_datos = "taller";  
+// Conexión a la base de datos
+$servidor = "mysql.inf.uct.cl";
+$user     = "cdarwitg";
+$password = "EgyKlAukGjQJ1s8de";
+$basedato = "A2024_cdarwitg";
 
+$db = mysqli_connect($servidor, $user, $password, $basedato);
 
-$conexion = new mysqli($host, $usuario, $password, $base_de_datos);
-
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+// Verificar la conexión
+if (!$db) {
+    die("Error de conexión a la BD: ". mysqli_connect_error());
 } else {
-    echo "Conexión a la base de datos exitosa";  
+    echo "Conexión exitosa a la base de datos.";
 }
 ?>

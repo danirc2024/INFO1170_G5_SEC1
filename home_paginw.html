@@ -175,83 +175,40 @@
             </ul>
         </section>
         
-        
-
         <section class="testimonios">
             <h2>Testimonios</h2>
             <div class="testimonios-contenedor">
                 <div class="testimonios-filtro">
                 </div>
-            
-                <div class="testimonios-slider">
-                    <div class="testimonio">
-                        <div class="avatar">S</div>
-                        <div class="detalles">
-                            <div class="estrellas">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>                            
-                            <p>shaun.jones</p>
-                            <p>Hace 6 días</p>
-                            <p>"No hay manera de replicar este servicio fantástico."</p>
-                        </div>
-                    </div>
-                    <div class="testimonio">
-                        <div class="avatar">L</div>
-                        <div class="detalles">
-                            <div class="estrellas">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p>littleeatshsc</p>
-                            <p>Hace 5 días</p>
-                            <p>"Servicio fantástico, superó mis expectativas, muy feliz."</p>
-                        </div>
-                    </div>
-                    <div class="testimonio">
-                        <div class="avatar">S</div>
-                        <div class="detalles">
-                            <div class="estrellas">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p>steve</p>
-                            <p>Hace 3 días</p>
-                            <p>"Fácil de usar, mejores resultados de los esperados"</p>
-                        </div>
-                    </div>
-                </div>
-            
+        
                 <div class="slider-controles">
                     <button id="izquierda-btn">&lt;</button>
                     <button id="derecha-btn">&gt;</button>
                 </div>
-            
+        
+                <div class="testimonios-slider">
+                    <!-- Los testimonios aparecerán aquí dinámicamente -->
+                </div>
+        
                 <div class="formulario-testimonios">
                     <h3>Agregar un nuevo testimonio</h3>
-                    <form id="formulario-testimonio">
+                    <form id="formulario-testimonio" action="subir_testimonio.php" method="post">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required>
-                        
+                        <input type="text" id="nombre" name="nombre" required>
+        
                         <label for="estrellas">Calificación (1 a 5 estrellas):</label>
-                        <input type="number" id="estrellas" min="1" max="5" required>
-            
+                        <input type="number" id="estrellas" name="calificacion" min="1" max="5" required>
+        
                         <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" rows="4" required></textarea>
-            
+                        <textarea id="mensaje" name="contenido" rows="4" required></textarea>
+        
                         <button type="submit">Enviar Testimonio</button>
                     </form>
                 </div>
             </div>
         </section>
+        
+        
         
         <section id="about" class="description">
             <h2>Sobre Nosotros</h2>
