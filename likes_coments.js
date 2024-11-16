@@ -55,20 +55,3 @@ function addComment(commentListId, commentTextId) {
     }
 }
 
-// Filtrar y ordenar noticias
-document.getElementById('filterSelect').addEventListener('change', function() {
-    const selectedFilter = this.value;
-    const newsContainer = document.querySelector('.container .row');
-    const newsItems = Array.from(newsContainer.children);
-
-    if (selectedFilter === 'recent') {
-        // Ordenar por fecha (más reciente primero)
-        newsItems.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
-    } else if (selectedFilter === 'popular') {
-        // Ordenar por cantidad de likes (más likes primero)
-        newsItems.sort((a, b) => b.dataset.likes - a.dataset.likes);
-    }
-
-    // Reorganizar el contenedor con los elementos ordenados
-    newsItems.forEach(item => newsContainer.appendChild(item));
-});
