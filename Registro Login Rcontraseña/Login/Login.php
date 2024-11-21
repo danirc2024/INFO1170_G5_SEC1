@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="InicioSesion.css">
+    <link rel="stylesheet" href="Login.css">
 </head>
 
 <body>
     <div class="login-container">
         <h2>Inicio de Sesión</h2>
 
-        <form action="Login.php" method="post">
+        <form action="Login.php" method="POST">
+            <?php
+            include ("Conex.inc");
+            include ("LoginCtr.php");
+            ?>
+
             <div class="input-group">
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
