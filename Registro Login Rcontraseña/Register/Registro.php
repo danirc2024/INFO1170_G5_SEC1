@@ -1,19 +1,24 @@
 <?php
-// Incluir archivo de conexión a la base de datos
 include 'Conex.inc';
 
-// Verifica si el formulario fue enviado
-if(isset($_POST['nombre'],$_POST['contra'],$_POST['correo'],$_POST['roluser'])) {
-    $nombre = $_POST['nombre'];
-    $contra = $_POST['contra'];
-    $correo = $_POST['correo'];
-    $roluser = $_POST['roluser']
- 
-    $sql=$db->query("INSERT INTO Taller_Int_Usuarios (nombre,contra,correo,roluser) VALUES ('$nombre', '$contra', '$correo', '$roluser')");
-        if ($sql==1) {
-            echo "Usuario Registrado";
+if (!empty($_POST['nombre']) && !empty($_POST['contra']) && !empty($_POST['correo']) && !empty($_POST['roluser'])) {
+    $nombre = trim($_POST['nombre']);
+    $contra = trim($_POST['contra']);
+    $correo = trim($_POST['correo']);
+    $roluser = intval($_POST['roluser']);
+
+    if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+        $stmt = $db->prepare("INSERT INTO Taller_Int_Usuarios (nombre, contra, correo, roluser) VALUES (?, ?, ?, ?)");
+        if ($stmt && $stmt->bind_param("sssi", $nombre, $contra, $correo, $roluser) && $stmt->execute()) {
+            echo "Usuario registrado exitosamente.";
+            echo '<script>alert("Usuario Creado"); window.location.href = "DIRECCION A REDIRIJIR";</script>';
         } else {
-            echo "Error al Registrar";
+            echo "Error al registrar.";
         }
+    } else {
+        echo "Correo electrónico no válido.";
     }
+} else {
+    echo "Por favor, completa todos los campos.";
+}
 ?>
