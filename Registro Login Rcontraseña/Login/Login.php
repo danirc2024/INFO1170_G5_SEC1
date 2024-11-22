@@ -12,20 +12,15 @@
     <div class="login-container">
         <h2>Inicio de Sesión</h2>
 
-        <form action="Login.php" method="POST">
-            <?php
-            include ("Conex.inc");
-            include ("LoginCtr.php");
-            ?>
-
+        <form action="LoginCtr.php" method="POST">
             <div class="input-group">
                 <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
+                <input type="text" id="username" name="nombre" required placeholder="Ingresa tu usuario">
             </div>
 
             <div class="input-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+                <input type="password" id="password" name="contra" required placeholder="Ingresa tu contraseña">
             </div>
 
             <button type="submit" class="login-btn">Iniciar Sesión</button>
