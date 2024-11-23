@@ -1,65 +1,58 @@
-<?php
-// Incluir archivo de conexión a la base de datos
-include 'Conex.inc';
-require 'PHPMailer/PHPMailerAutoload.php'; // Asegúrate de tener PHPMailer instalado
+<!DOCTYPE html>
+<html lang="es">
 
-if (isset($_POST['email'])) {
-    $correo = $_POST['email'];
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Contraseña</title>
+    <link rel="stylesheet" href="RecuperContra.css">
+</head>
 
-    // Verificar si el correo existe en la base de datos
-    $sql = "SELECT nombre FROM Taller_Int_Usuarios WHERE correo = ?";
-    $stmt = mysqli_prepare($db, $sql);
+<body>
+    <div class="recover-container">
+        <h2>Recuperación de Contraseña</h2>
 
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, 's', $correo);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
+        <form id="recoverForm" action="RecuperContra.php" method="POST">
+            <div class="input-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Ingresa tu correo">
+            </div>
 
-        // Comprobar si el usuario existe
-        if (mysqli_stmt_num_rows($stmt) > 0) {
-            // Generar token único para el enlace de recuperación
-            $token = bin2hex(random_bytes(50)); // Token de 50 caracteres
+            <button type="submit" class="recover-btn" name="enviar">Enviar enlace de recuperación</button>
 
-            // Guardar el token en la base de datos (puedes tener una tabla de tokens si prefieres)
-            // Aquí deberías agregar lógica para almacenar el token en la base de datos
+            <div class="message" id="message"></div>
 
-            // Configurar PHPMailer
-            $mail = new PHPMailer;
-            $mail->isSMTP();
-            $mail->Host = 'smtp.tudominio.com'; // Cambia esto por el servidor SMTP de tu elección
-            $mail->SMTPAuth = true;
-            $mail->Username = 'tu_correo@dominio.com'; // Cambia esto por tu dirección de correo
-            $mail->Password = 'tu_contraseña'; // Cambia esto por tu contraseña
-            $mail->SMTPSecure = 'tls'; // o 'ssl'
-            $mail->Port = 587; // o 465 si usas SSL
+            <div class="back-to-login">
+                <a href="InicioSesion.html">¿Recordaste tu contraseña? Inicia sesión</a>
+            </div>
+        </form>
 
-            $mail->setFrom('tu_correo@dominio.com', 'Nombre del Remitente'); // Cambia esto
-            $mail->addAddress($correo);
+        <?php
+        if(isset($_POST["enviar"])){
+            $email=$_POST["email"];
 
-            // Contenido del correo
-            $mail->isHTML(true);
-            $mail->Subject = 'Recuperación de Contraseña';
-            $mail->Body    = 'Para recuperar tu contraseña, haz clic en este enlace: <a href="http://tu_dominio.com/restablecer.php?token=' . $token . '">Restablecer Contraseña</a>';
+            $destinatario="$email";
+            $asunto="Nuevo Mensaje de Alterra";
 
-            // Enviar el correo
-            if ($mail->send()) {
-                echo "<script>alert('Se ha enviado un enlace de recuperación a tu correo.'); window.location.href = 'InicioSesion.html';</script>";
-            } else {
-                echo 'Error al enviar el correo: ' . $mail->ErrorInfo;
+            $contenido="Nombre:Usuario \n";
+            $contenido.="Email: $email \n";
+            $contenido.="Mensaje: Ustes solicito un cambio";
+
+            $header="From: NoReply@soft.com";
+
+            $mail=mail($destinatario, $asunto, $contenido, $header);
+
+            if($mail){
+                echo "<script>alert('El correo se envio correctamente');</script>";
+            }else{
+                echo "<script>alert('El correo no se envio');</script>";
             }
-        } else {
-            echo "<script>alert('El correo electrónico no está registrado.'); window.location.href = 'RecuperarContraseña.html';</script>";
+
         }
+        
+        ?>
 
-        // Cerrar el statement
-        mysqli_stmt_close($stmt);
-    } else {
-        echo "Error en la preparación de la consulta.";
-    }
-} else {
-    echo "Por favor, completa todos los campos.";
-}
+    </div>
+</body>
 
-// Cerrar la conexión
-mysqli_close($db);
-?>
+</html>
