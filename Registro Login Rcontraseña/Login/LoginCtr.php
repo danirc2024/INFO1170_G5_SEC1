@@ -1,27 +1,33 @@
 <?php
-
+// Incluir el archivo de conexión
 include("Conex.inc");
-$user = $_POST['nombre'];
-$password = $_POST['contra'];
 
-$password_encriptada = md5($password);
+// Obtener los datos del formulario
+$nombre = $_POST['nombre'];
+$contra = $_POST['contra'];
 
-$sql = "SELECT * FROM Taller_Int_Usuarios WHERE usuario = ? AND contraseña = ?";
+// Consultar la base de datos para verificar las credenciales
+$sql = "SELECT * FROM Taller_Int_Usuarios WHERE usuario = ?";
 $stmt = $db->prepare($sql);
-$stmt->bind_param("ss", $user, $password_encriptada);
+$stmt->bind_param("s", $nombre);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
-    header("Location: Redirije a la pagina principal");
-    exit();
+    $fila = $resultado->fetch_assoc();
+    if (password_verify($contra, $fila['contra'])) {
+        header("Location: hola.html");
+        exit();
+    } else {
+        // Mostrar alerta y permanecer en la misma página
+        echo "<script> alert('Usuario o contraseña incorrectos'); window.location.href = 'index.php'; </script>";
+    }
 } else {
-    echo "<script>
-        alert('Usuario o contraseña incorrectos');
-        window.location.href = 'Login.php';
-    </script>";
+    // Mostrar alerta y permanecer en la misma página
+    echo "<script> alert('Usuario o contraseña incorrectos'); window.location.href = 'index.php'; </script>";
 }
 
+// Cerrar la conexión
 $stmt->close();
 $db->close();
-?> 
+?>
