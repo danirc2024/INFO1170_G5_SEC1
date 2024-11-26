@@ -11,42 +11,46 @@ darkModeToggle.addEventListener('click', () => {
     }
 });
 
-
+// Incrementar el contador de likes y actualizar data-likes
 function incrementLike(button) {
-    // Busca el span que muestra el contador de likes al lado del botón clicado
     const likeCount = button.nextElementSibling;
-    // Convierte el texto del contador en un número y lo incrementa
-    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    const heartIcon = likeCount.nextElementSibling;
+    const newsContainer = button.closest('.col-md-4 mb-4');
+
+    if (heartIcon.style.display === "none") {
+        // Activa el like
+        heartIcon.style.display = "inline";
+        likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    } else {
+        // Quita el like
+        heartIcon.style.display = "none";
+        likeCount.textContent = parseInt(likeCount.textContent) - 1;
+    }
+
+    // Actualizar data-likes con el nuevo conteo de likes
+    newsContainer.dataset.likes = likeCount.textContent;
 }
 
 // Función para mostrar/ocultar el formulario de comentarios
 function toggleCommentForm(id) {
     var form = document.getElementById(id);
-    if (form.style.display === "none") {
-        form.style.display = "block";
-    } else {
-        form.style.display = "none";
-    }
+    form.style.display = (form.style.display === "none") ? "block" : "none";
 }
 
-// Funcion para agregar un comentario a la lista
+// Función para agregar un comentario a la lista
 function addComment(commentListId, commentTextId) {
-    // Obtener el texto del comentario
     var commentText = document.getElementById(commentTextId).value;
 
-    // Si el comentario no esta vacio
     if (commentText.trim() !== "") {
-        // Crear un nuevo elemento <li> para el comentario
         var newComment = document.createElement("li");
         newComment.textContent = commentText;
 
-        // Agregar el nuevo comentario a la lista
         var commentList = document.getElementById(commentListId);
         commentList.appendChild(newComment);
 
-        // Limpiar el campo de texto del comentario
         document.getElementById(commentTextId).value = "";
     } else {
         alert("Por favor, escribe un comentario antes de enviarlo.");
     }
 }
+

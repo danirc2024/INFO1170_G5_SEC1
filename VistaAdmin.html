@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Vista de Perfil</title>
+    <link rel="stylesheet" href="VistaAdmin.css">
+</head>
+
+<body>
+    <header class="admin-header">
+        
+    </header>
+
+    <main class="admin-main">
+        <section class="admin-profile">
+            <h2>Perfil Administrador</h2>
+            <p><strong>Nombre:</strong> Admin</p>
+            <p><strong>Correo:</strong> admin@example.com</p>
+            
+            <!-- Botones "Cerrar Sesión" y "Volver a Inicio" -->
+            <div class="profile-actions">
+                <button onclick="window.location.href='InicioSesionLogin.html'">Cerrar Sesión</button>
+                <button onclick="window.location.href='home_paginw.html'">Volver a Inicio</button>
+                <button onclick="window.location.href='AgregarPuntos.html'">Agregar Puntos</button>
+            </div>
+        </section>
+
+        <!-- Formulario para agregar usuario -->
+        <section class="add-user">
+            <h2>Agregar Nuevo Usuario</h2>
+            <form id="addUserForm">
+                <div class="input-group">
+                    <label for="newUsername">Nombre de Usuario:</label>
+                    <input type="text" id="newUsername" required placeholder="Ingresa el nombre de usuario">
+                </div>
+                <div class="input-group">
+                    <label for="newEmail">Correo:</label>
+                    <input type="email" id="newEmail" required placeholder="Ingresa el correo del usuario">
+                </div>
+                <button type="button" class="add-btn" onclick="addUser()">Agregar Usuario</button>
+            </form>
+        </section>
+
+        <section class="user-list">
+            <h2>Listado de Usuarios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable">
+                    <!-- Ejemplo de usuarios -->
+                    <tr id="user-1">
+                        <td>1</td>
+                        <td>JuanPerez</td>
+                        <td>juan.perez@example.com</td>
+                        <td>
+                            <button class="edit-btn" onclick="editUser(1)">Editar</button>
+                            <button class="delete-btn" onclick="deleteUser(1)">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr id="user-2">
+                        <td>2</td>
+                        <td>AnaLopez</td>
+                        <td>ana.lopez@example.com</td>
+                        <td>
+                            <button class="edit-btn" onclick="editUser(2)">Editar</button>
+                            <button class="delete-btn" onclick="deleteUser(2)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal para Editar Usuario -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form id="editForm">
+                <input type="hidden" id="userId">
+                <div class="input-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="usernameEdit" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Correo:</label>
+                    <input type="email" id="emailEdit" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                    <button type="button" class="save-btn" onclick="saveUser()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="VistaAdmin.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
