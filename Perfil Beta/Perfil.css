@@ -1,0 +1,42 @@
+/*Header, se ve como el de los eventos, me gusta el diseño*/
+.header-personalizado {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar-custom {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar-custom a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar-custom a:hover {
+    background-color: #555;
+}
+
+
+
+
+
+/*Footer*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 5px solid yellow;
+}
