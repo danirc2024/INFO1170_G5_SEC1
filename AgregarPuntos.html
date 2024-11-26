@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Puntos de Reciclaje</title>
+    <link rel="stylesheet" href="AgregarPuntos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Agregar un Punto de Reciclaje</h2>
+
+        <!-- Botón para regresar a la página VistaAdmin.html -->
+        <a href="VistaAdmin.html" class="back-button">Volver a Administración</a>
+
+        <!-- Formulario para agregar punto de reciclaje -->
+        <form id="add-point-form" class="hidden">
+            <div class="form-group">
+                <label for="recycling-point-name">Nombre del Punto</label>
+                <input type="text" id="recycling-point-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recycling-material">Material Reciclable</label>
+                <select id="recycling-material" required>
+                    <option value="Cartón">Cartón</option>
+                    <option value="Papel">Papel</option>
+                    <option value="Plástico">Plástico</option>
+                    <option value="Vidrio">Vidrio</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Pilas">Pilas</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea id="description" rows="4" required></textarea>
+            </div>
+
+            <!-- Botones Guardar y Cancelar -->
+            <div class="button-group">
+                <button type="submit" id="save-button">Guardar</button>
+                <button type="button" id="cancel-button">Cancelar</button>
+            </div>
+        </form>
+
+        <button id="delete-button" class="hidden">Eliminar Punto</button>
+
+        <!-- Mapa -->
+        <div id="map" class="map-container"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="AgregarPuntos.js"></script>
+</body>
+</html>
+
+
+

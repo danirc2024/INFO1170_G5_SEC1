@@ -1,0 +1,129 @@
+/* Estilos generales */
+body {
+    background-image: url('/imagenes/PlantitaFondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: auto; /* Habilitar desplazamiento */
+}
+
+/* Contenedor central */
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: auto; /* Permite desplazarse si el contenido excede */
+}
+
+/* Botón para regresar a la página VistaAdmin.html */
+.back-button {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%; /* Centrar en el contenedor */
+}
+
+.back-button:hover {
+    background-color: #2563eb;
+}
+
+/* Formulario */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* Botón para eliminar */
+#delete-button {
+    background-color: #f44336;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto;
+}
+
+#delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Mapa */
+.map-container {
+    margin-top: 20px;
+    height: 400px;
+}
+
+/* Estilos ocultos */
+.hidden {
+    display: none;
+}
+
+/* Estilos para los botones de Guardar y Cancelar */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Botones Guardar y Cancelar (ahora ambos con el mismo estilo) */
+#save-button, #cancel-button {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #3b82f6; /* Mismo color que el botón de guardar */
+    color: white;
+}
+
+#cancel-button:hover, #save-button:hover {
+    background-color: #2563eb;  /* Mismo color de hover */
+}
+
+
+
+
+
+
+
