@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="news.css">
 </head>
 <body>
@@ -64,6 +65,8 @@
         </button>
     </div>
 
+    
+    
     <div class="row mb-4">
         <div class="col-md-6">
             <a href="https://www.acuorum.com/en-2050-podrian-haber-el-doble-de-muertes-prematuras-por-contaminacion/" target="_blank">
@@ -74,7 +77,9 @@
             <h4>En 2050 podrían haber el doble de muertes prematuras por contaminación</h4>
             <p>La mortalidad prematura por contaminación del aire podría duplicarse para 2050, alcanzando 6,6 millones de muertes anuales, según un estudio de la revista Nature.</p>
             <p>El análisis indica que el ozono y las partículas finas son los contaminantes más peligrosos, especialmente en áreas urbanas donde las emisiones de cocinas y calefacción tienen un gran impacto.</p>
+
             <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
+            <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
             <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
 
             <!-- Formulario de comentarios oculto inicialmente -->
@@ -103,23 +108,31 @@
                 La pérdida de masas de hielo en los polos, la subida del nivel del mar y en general el calentamiento de la atmósfera y de los océanos de nuestro planeta, son señales irrefutables para pasar a la acción</p>
             
                 <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-                <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+                <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+                <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm2')">Comentar</button>
 
             <!-- Formulario de comentarios oculto inicialmente -->
-            <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+            <div id="commentForm2" class="comment-form mt-3" style="display: none;">
+                <textarea id="commentText2" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                <button class="btn btn-success mt-2" onclick="addComment('commentList2', 'commentText2')">Enviar comentario</button>
             </div>
 
             <!-- Lista donde se mostrarán los comentarios -->
-            <ul id="commentList1" class="comment-list mt-3">
+            <ul id="commentList2" class="comment-list mt-3">
                 <!-- Aquí se agregarán los comentarios -->
             </ul>
         </div>
     </div>
-
+    <div class="filter-container">
+        <label for="filterSelect">Ordenar por:</label>
+        <select id="filterSelect" class="form-select">
+            <option value="recent">Más recientes</option>
+            <option value="recent">Más recientes</option>
+            <option value="popular">Más populares</option>
+        </select>
+    </div>
     <div class="row">
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-date="2024-11-01" data-likes="0">
             <a href="https://www.gob.cl/noticias/calidad-del-aire-2024-tercer-mejor-ano-region-metropolitana/" target="_blank">
             <img src="https://s3.amazonaws.com/gobcl-prod/filer_public_thumbnails/public_files/Subidas-desordenadas/_MG_2560.jpg__1440x2000_q70_subsampling-2.jpg" class="img-fluid rounded" alt="Noticia secundaria 1">
             </a>
@@ -127,20 +140,21 @@
             <p>En 2024, la Región Metropolitana registró su tercer mejor año en calidad +del aire desde que existen registros (1997)</p>
 
             <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-            <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+            <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+            <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm3')">Comentar</button>
 
             <!-- Formulario de comentarios oculto inicialmente -->
-            <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+            <div id="commentForm3" class="comment-form mt-3" style="display: none;">
+                <textarea id="commentText3" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                <button class="btn btn-success mt-2" onclick="addComment('commentList3', 'commentText3')">Enviar comentario</button>
             </div>
 
             <!-- Lista donde se mostrarán los comentarios -->
-            <ul id="commentList1" class="comment-list mt-3">
+            <ul id="commentList3" class="comment-list mt-3">
                 <!-- Aquí se agregarán los comentarios -->
             </ul>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-date="2024-11-01" data-likes="0">
             <a href="https://www.aguasaraucania.cl/noticia_2-19_mas-de-40-mil-kilos-de-desechos-se-sacaron-del-alcantarillado-en-lo-que-va-de-este-ano-150620194446" target="_blank">
             <img src="https://www.aguasaraucania.cl/recursos-ara/desechos%20alcantarilLado2.jpg" class="img-fluid rounded" alt="Noticia secundaria 2">
             </a>
@@ -149,20 +163,21 @@
                 de los domicilios, que se ve particularmente exigido, debido a la gran cantidad de basura que se bota por las tuberías</p>
 
                 <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-                <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+                <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+                <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm4')">Comentar</button>
 
                 <!-- Formulario de comentarios oculto inicialmente -->
-                <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                    <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                    <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+                <div id="commentForm4" class="comment-form mt-3" style="display: none;">
+                    <textarea id="commentText4" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                    <button class="btn btn-success mt-2" onclick="addComment('commentList4', 'commentText4')">Enviar comentario</button>
                 </div>
 
                 <!-- Lista donde se mostrarán los comentarios -->
-                <ul id="commentList1" class="comment-list mt-3">
+                <ul id="commentList4" class="comment-list mt-3">
                     <!-- Aquí se agregarán los comentarios -->
                 </ul>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-date="2024-11-01" data-likes="0">
             <a href="https://sinca.mma.gob.cl/index.php/region/info/id/IX" target="_blank">
             <img src="imagenes/araucania.jpg" class="img-fluid rounded" alt="Noticia secundaria 3">
             </a>
@@ -172,20 +187,21 @@
                  94% de las emisiones de material particulado</p>
 
                  <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-                 <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+                 <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+                 <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm5')">Comentar</button>
 
                  <!-- Formulario de comentarios oculto inicialmente -->
-                 <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                     <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                     <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+                 <div id="commentForm5" class="comment-form mt-3" style="display: none;">
+                     <textarea id="commentText5" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                     <button class="btn btn-success mt-2" onclick="addComment('commentList5', 'commentText5')">Enviar comentario</button>
                  </div>
      
                  <!-- Lista donde se mostrarán los comentarios -->
-                 <ul id="commentList1" class="comment-list mt-3">
+                 <ul id="commentList5" class="comment-list mt-3">
                      <!-- Aquí se agregarán los comentarios -->
                  </ul>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-date="2024-11-01" data-likes="0">
             <a href="https://www.fundacionaquae.org/wiki/como-se-recicla-el-aceite-usado/" target="_blank">
             <img src="imagenes/aceite.jpg" class="img-fluid rounded" alt="Noticia secundaria 4">
             </a>
@@ -195,20 +211,21 @@
                  En cambio, reciclarlo nos permite aprovecharlo para crear otros productos</p>
 
                  <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-                 <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+                 <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+                 <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm6')">Comentar</button>
 
                  <!-- Formulario de comentarios oculto inicialmente -->
-                 <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                     <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                     <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+                 <div id="commentForm6" class="comment-form mt-3" style="display: none;">
+                     <textarea id="commentText6" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                     <button class="btn btn-success mt-2" onclick="addComment('commentList6', 'commentText6')">Enviar comentario</button>
                  </div>
      
                  <!-- Lista donde se mostrarán los comentarios -->
-                 <ul id="commentList1" class="comment-list mt-3">
+                 <ul id="commentList6" class="comment-list mt-3">
                      <!-- Aquí se agregarán los comentarios -->
                  </ul>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-date="2024-11-01" data-likes="0">
             <a href="https://www.soplas.es/reciclar-botellas-de-plastico-como-hacerlo-correctamente/#:~:text=%C2%BFD%C3%B3nde%20se%20pueden%20reciclar%20los,Es%20decir%2C%20el%20contenedor%20amarillo." target="_blank">
             <img src="imagenes/botellas-plastico-soplas.webp" class="img-fluid rounded" alt="Noticia secundaria 5">
             </a>
@@ -218,20 +235,21 @@
                  económica y altamente personalizable para transportar y comercializar todo tipo de productos.</p>
 
                  <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-                 <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+                 <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+                 <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm7')">Comentar</button>
 
                  <!-- Formulario de comentarios oculto inicialmente -->
-                 <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                     <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                     <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+                 <div id="commentForm7" class="comment-form mt-3" style="display: none;">
+                     <textarea id="commentText7" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                     <button class="btn btn-success mt-2" onclick="addComment('commentList7', 'commentText7')">Enviar comentario</button>
                  </div>
      
                  <!-- Lista donde se mostrarán los comentarios -->
-                 <ul id="commentList1" class="comment-list mt-3">
+                 <ul id="commentList7" class="comment-list mt-3">
                      <!-- Aquí se agregarán los comentarios -->
                  </ul>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"  data-date="2024-11-01" data-likes="0">
             <a href="https://www.ecologiaverde.com/como-reciclar-carton-2828.html" target="_blank">
             <img src="imagenes/carton.jpg" class="img-fluid rounded" alt="Noticia secundaria 5">
             </a>
@@ -239,19 +257,19 @@
             <p>Para reciclar el cartón hay que saber cuándo podemos depositarlo y dónde depositarlo.
                  Además, a veces, antes de buscar la opción de reciclar,
                  podemos reutilizarlo transformando el residuo en un nuevo objeto útil o usarlo para hacer manualidades.</p>
-
+                
             <button class="btn btn-primary like-btn" onclick="incrementLike(this)">Like</button> <span class="like-count">0</span> Likes
-
-            <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm1')">Comentar</button>
+            <i class="bi bi-heart-fill text-danger ms-2 heart-icon" style="display: none;"></i>
+            <br><button class="btn btn-primary mt-3" onclick="toggleCommentForm('commentForm8')">Comentar</button>
 
             <!-- Formulario de comentarios oculto inicialmente -->
-            <div id="commentForm1" class="comment-form mt-3" style="display: none;">
-                <textarea id="commentText1" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
-                <button class="btn btn-success mt-2" onclick="addComment('commentList1', 'commentText1')">Enviar comentario</button>
+            <div id="commentForm8" class="comment-form mt-3" style="display: none;">
+                <textarea id="commentText8" class="form-control" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                <button class="btn btn-success mt-2" onclick="addComment('commentList8', 'commentText8')">Enviar comentario</button>
             </div>
 
             <!-- Lista donde se mostrarán los comentarios -->
-            <ul id="commentList1" class="comment-list mt-3">
+            <ul id="commentList8" class="comment-list mt-3">
                 <!-- Aquí se agregarán los comentarios -->
             </ul>
         </div>
