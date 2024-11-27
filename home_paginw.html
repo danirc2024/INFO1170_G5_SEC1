@@ -11,10 +11,7 @@
 </head>
 <body>
     <header class="Header">
-        <h2 id="Titulo">Encuentra el Punto de Reciclaje más Cercano</h2>
         <nav class="INICSERVUSCONTAC">
-        
-            </label>
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
@@ -24,15 +21,13 @@
                 <li><a href="ContadorCarbono.html">Contador De Carbono</a></li>
             </ul>
         </nav>
+        <h2>Bienvenido a Reciclaje en Temuco</h2>
         <div class="BarraBusqueda">
-            <input type="text" placeholder="Buscar...">
+            <input type="text" placeholder="Buscar puntos de reciclaje...">
+            <button id="btnBuscar" class="btn btn-success">Buscar</button>
         </div>
     </header>
-
-    <main>
-        <section class="puntos">
-          <a href="#mapa" class="btn">Encuentra puntos de reciclaje</a>
-        </section>
+      
 
         <section id="mapa" class="map-section">
             <h2>Puntos de Reciclaje Cercanos</h2>
@@ -176,87 +171,86 @@
         
         
 
-        <section class="testimonios">
-            <h2>Testimonios</h2>
-            <div class="testimonios-contenedor">
-                <div class="testimonios-filtro">
-                </div>
-            
-                <div class="testimonios-slider">
-                    <div class="testimonio">
-                        <div class="avatar">S</div>
-                        <div class="detalles">
-                            <div class="estrellas">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>                            
-                            <p>shaun.jones</p>
-                            <p>Hace 6 días</p>
-                            <p>"No hay manera de replicar este servicio fantástico."</p>
-                        </div>
-                    </div>
-                    <div class="testimonio">
-                        <div class="avatar">L</div>
-                        <div class="detalles">
-                            <div class="estrellas">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+        <section class="testimonios container py-5">
+            <h2 class="text-center mb-4">Testimonios</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="testimonios-slider mb-4 d-flex flex-column gap-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p>"¡Increíble iniciativa para nuestra comunidad!"</p>
+                                <div class="estrellas">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
                             </div>
-                            <p>littleeatshsc</p>
-                            <p>Hace 5 días</p>
-                            <p>"Servicio fantástico, superó mis expectativas, muy feliz."</p>
-                        </div>
-                    </div>
-                    <div class="testimonio">
-                        <div class="avatar">S</div>
-                        <div class="detalles">
-                            <div class="estrellas">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                            <div class="col-md-4">
+                                <p>"Gracias a este proyecto, mi familia recicla más."</p>
+                                <div class="estrellas">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
                             </div>
-                            <p>steve</p>
-                            <p>Hace 3 días</p>
-                            <p>"Fácil de usar, mejores resultados de los esperados"</p>
+                            <div class="col-md-4">
+                                <p>"Muy útil para encontrar puntos de reciclaje cerca."</p>
+                                <div class="estrellas">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            
-                <div class="slider-controles">
-                    <button id="izquierda-btn">&lt;</button>
-                    <button id="derecha-btn">&gt;</button>
-                </div>
-            
-                <div class="formulario-testimonios">
-                    <h3>Agregar un nuevo testimonio</h3>
-                    <form id="formulario-testimonio">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required>
-                        
-                        <label for="estrellas">Calificación (1 a 5 estrellas):</label>
-                        <input type="number" id="estrellas" min="1" max="5" required>
-            
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" rows="4" required></textarea>
-            
-                        <button type="submit">Enviar Testimonio</button>
-                    </form>
+                    <div class="formulario-testimonios">
+                        <h3 class="text-center mb-3">Agregar un nuevo testimonio</h3>
+                        <form id="formulario-testimonio" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="autor" class="form-label">Autor:</label>
+                                <input type="text" id="autor" name="autor" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="calificacion" class="form-label">Calificación (1 a 5 estrellas):</label>
+                                <input type="number" id="calificacion" name="calificacion" class="form-control" min="1" max="5" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contenido" class="form-label">Contenido:</label>
+                                <textarea id="contenido" name="contenido" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar Testimonio</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
         
+<<<<<<< HEAD
+=======
+        
+        <section id="about" class="description">
+            <h2>Sobre Nosotros</h2>
+            <p>Estamos comprometidos con el cuidado del medio ambiente y el fomento de la sostenibilidad en nuestra comunidad. <br>
+             Nuestro objetivo principal es facilitar el acceso a la información sobre puntos de reciclaje y puntos limpios, <br>
+             ayudando a las personas a conocer los lugares cercanos donde pueden reciclar sus residuos de manera correcta.
+        <br>A través de nuestra plataforma, buscamos empoderar a los ciudadanos para que se conviertan en agentes de cambio. 
+        <br> Proporcionamos una herramienta práctica para ubicar puntos de reciclaje en tiempo real, educando sobre los <br>
+         materiales que se pueden reciclar en cada ubicación. Además, promovemos el voluntariado para la limpieza de espacios públicos, <br> 
+        colaborando con empresas locales que ofrecen incentivos a quienes se suman a estas actividades. <br>
+        Creemos firmemente en la importancia de la educación ambiental y el reciclaje como una forma efectiva de reducir la contaminación <br> 
+        y preservar los recursos naturales para las generaciones futuras. Nos esforzamos por crear una comunidad informada y activa, <br>
+        donde cada persona pueda contribuir a la economía circular y al cuidado de nuestro planeta.</p>
+        </section>
+    </main>
+>>>>>>> 454a73cd30cd1815b5d65b22f42abc021d68a438
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="homefunt.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="filtros_mapa.js"></script>
 </body>
 </html>
