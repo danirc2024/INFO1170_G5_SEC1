@@ -25,7 +25,12 @@
     background-color: #555;
 }
 
-
+h4, p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 
 
