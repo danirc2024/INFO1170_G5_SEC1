@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,21 +22,35 @@
     
     <div class="container mt-5">
         <section class="informacion-voluntario mb-4">
-            <h2>Información del Voluntario</h2>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Nombre:</strong> Juan Pérez</li>
-                <li class="list-group-item"><strong>Correo Electrónico:</strong> juanperez@ejemplo.com</li>
-                <li class="list-group-item"><strong>Edad:</strong> 25 años</li>
-                <li class="list-group-item"><strong>Participaciones en Eventos:</strong> 3 eventos completados</li>
-            </ul>
-        </section>
+        <?php 
+        include("Conex.inc");
+
+        $sql = $db->query("SELECT * FROM Taller_Int_Usuarios");
+        if ($sql) {
+            if ($sql->num_rows > 0) {
+                while ($datos = $sql->fetch_object()) { ?>
+                <h1>Bienvendo <?php echo $datos->nombre?></h1>
+                <ul class="list-group">
+                    <li class="list-group-item">Nombre: <?php echo $datos->nombre; ?></li>
+                    <li class="list-group-item">Correo: <?php echo $datos->correo; ?></li>
+                    <li class="list-group-item"><strong>Participaciones en Eventos: <b>0</b></strong></li>
+                </ul>
+            <?php }
+        } else { ?>
+            <p>No hay información disponible de voluntarios.</p>
+        <?php }
+    } else { ?>
+        <p>Error al ejecutar la consulta.</p>
+    <?php } ?>
+</section>
+
 
         <section class="mision-completa mb-4">
             <h2>Mis Misiones Completadas</h2>
             <ul id="mis-misiones" class="list-group">
-                <li class="list-group-item">Misión: Recolección de Basura en INACAP - Fecha: 17 de octubre de 2024</li>
-                <li class="list-group-item">Misión: Vaciar Contenedor de Máquina 1 - Fecha: 20 de octubre de 2024</li>
-                <li class="list-group-item">Misión: Se solicita Mecánico en Mackena - Fecha: 25 de octubre de 2024</li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
             </ul>
         </section>
 
@@ -43,12 +58,13 @@
             <h2>Acciones Disponibles</h2>
             <div class="d-flex gap-3">
                 <button id="editarPerfil" class="btn btn-warning btn-lg">Editar Perfil</button>
-                <button id="verMision" class="btn btn-success btn-lg">Ver Misiones Disponibles</button>
+                <!--<button id="EventosSoli.html" class="btn btn-success btn-lg">Ver Misiones Disponibles</button> -->
+                <button id="CAUTION" class="btn btn-danger btn-lg">Ponte al Dia</button>
             </div>
         </section>
     </div>
 
-    <footer class="bg-primary text-white text-center py-3">
+    <footer>
         <p>&copy; 2024 Alterra</p>
     </footer>
 
