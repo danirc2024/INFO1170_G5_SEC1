@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('imagenes/nature.jpg'); /* Ruta de tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    height: 100vh; /* Asegura que cubra el 100% de la altura de la pantalla */
+}
+
+button {
+    background-color: #00670c; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Manito al pasar el mouse */
+    transition: background-color 0.3s; /* Animación suave al pasar el mouse */
+}
+button:hover {
+    background-color: #004808; /* Color más oscuro al pasar el mouse */
+}
+
+#about {
+    background-color:darkseagreen;
+    margin: 30px;
+    border: 2px solid black;
+}
+
+p {
+    color:rgb(0, 47, 0);
+
+}
+
+.description {
+    padding: 20px;
+    text-align: justify;
+}
+
+.description h2 {
+    font-size: 28px;
+    color: darkgreen;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 20px;
+}
+
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+.icons {
+    position: relative;
+}
+
+.contacto {
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contacto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background-color: #0056b3;
+}
+
+.iconos {
+    position: relative;
+    
+}
+
+.iconos i {
+    padding: 10px;
+    margin: 30px;
+    font-size: 30px;
+    margin-left: 15px;
+
+}
