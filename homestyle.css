@@ -102,7 +102,7 @@ body {
     z-index: 2; /* Asegura que el texto y el botón estén sobre la capa */
 }
 
-.btn {
+/* .btn {
     z-index: 2;
     background: linear-gradient(90deg,
         #27b1f1, #3bf163);
@@ -117,7 +117,7 @@ body {
 .btn:hover {
     background: linear-gradient(90deg,
         #02547a, #0b8024)
-}
+} */
 
 #map {
     height: 700px;

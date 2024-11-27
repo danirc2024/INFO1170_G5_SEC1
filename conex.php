@@ -1,9 +1,9 @@
 <?php
-$host = "localhost";  
-$usuario = "root";    
-$password = "";       
-$base_de_datos = "taller";  
-
+// Conexión a la base de datos
+$servidor = "mysql.inf.uct.cl";
+$user     = "cdarwitg";
+$password = "EgyKlAukGjQJ1s8de";
+$basedato = "A2024_cdarwitg";
 
 $conexion = new mysqli($host, $usuario, $password, $base_de_datos);
 
